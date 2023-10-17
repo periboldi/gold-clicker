@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" modified="2023-10-16T11:07:02.427Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="femy0JQPYk2s4V9ewiQq" version="22.0.4" type="device">
+  <diagram name="1 oldal" id="9_CFz6xs1quLUDm8gW07">
+    <mxGraphModel dx="1434" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IvCPL0VLkoYU5I1dA0V2-1" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.browserWindow;rSize=0;strokeColor=#666666;strokeColor2=#008cff;strokeColor3=#c4c4c4;mainText=,;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="1360" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="IvCPL0VLkoYU5I1dA0V2-2" value="Page 1" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.anchor;fontSize=17;fontColor=#666666;align=left;whiteSpace=wrap;" parent="IvCPL0VLkoYU5I1dA0V2-1" vertex="1">
+          <mxGeometry x="60" y="12" width="110" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="IvCPL0VLkoYU5I1dA0V2-3" value="https://www.draw.io" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.anchor;rSize=0;fontSize=17;fontColor=#666666;align=left;" parent="IvCPL0VLkoYU5I1dA0V2-1" vertex="1">
+          <mxGeometry x="130" y="60" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="IvCPL0VLkoYU5I1dA0V2-5" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Gold-Cart-128.png" parent="IvCPL0VLkoYU5I1dA0V2-1" vertex="1">
+          <mxGeometry x="610" y="190" width="128" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="H3CjgF7mUc-mE-nzHEZ1-1" value="100 000 000 arany" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;" vertex="1" parent="IvCPL0VLkoYU5I1dA0V2-1">
+          <mxGeometry x="604" y="330" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H3CjgF7mUc-mE-nzHEZ1-3" value="123 456 789 mp (idő)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="IvCPL0VLkoYU5I1dA0V2-1">
+          <mxGeometry x="584" y="130" width="180" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
