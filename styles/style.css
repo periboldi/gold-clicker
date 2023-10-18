@@ -34,6 +34,12 @@ body {
     padding: 5px;
 }
 
+.skills-table img, .business-table img {
+    width: 100px;
+    border-radius: 50%;
+    
+}
+
 
 /* *************************** Main area ***************************** */
 
