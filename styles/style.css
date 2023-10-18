@@ -1,0 +1,27 @@
+html {
+font-size: 16px;
+box-sizing: border-box;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    min-width: 1024px ;
+}
+
+.skills-table, .business-table {
+/*     max-width: 30%; */
+margin: 0 20px;
+}
+
+/* *************************** Main area ***************************** */
+
+.main-container {
+    display: flex;
+/* flex-wrap: wrap; */
+}
