@@ -188,14 +188,26 @@ function getEmployee({ employeeName, goldPerClickIncrement, description, amount,
     `;
 }
 
+/*
 let employeeTemplate = getEmployee(employeeList[0]);
 let employeeTemplate1 = getEmployee(employeeList[1]);
 let employeeTemplate2 = getEmployee(employeeList[2]);
 let employeeTemplate3 = getEmployee(employeeList[3]);
 let employeeTemplate4 = getEmployee(employeeList[4]);
 let employeeTemplate5 = getEmployee(employeeList[5]);
-
-
-
 document.querySelector(".js-employees-tbody").innerHTML = employeeTemplate + employeeTemplate1 + employeeTemplate2 + employeeTemplate3 + employeeTemplate4 + employeeTemplate5;
+*/
+
+// document.querySelector(".js-employees-tbody").innerHTML = getEmployee(employeeList[0]) + getEmployee(employeeList[1]) + getEmployee(employeeList[2]) + getEmployee(employeeList[3]) + getEmployee(employeeList[4]) + getEmployee(employeeList[5]);
+// getEmployee(employeeList[0])  + getEmployee(employeeList[1]) + getEmployee(employeeList[2]) + getEmployee(employeeList[3]) + getEmployee(employeeList[4]) + getEmployee(employeeList[5]);
+
+
+let employeeTable = "";
+
+for (i = 0; i <= 5; i += 1) {
+
+    employeeTable += getEmployee(employeeList[i]);
+}
+
+document.querySelector(".js-employees-tbody").innerHTML = employeeTable;
 
