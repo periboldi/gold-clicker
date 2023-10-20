@@ -104,19 +104,34 @@ let skillTemplate2 = getSkill(skillList[2]);
 let skillTemplate3 = getSkill(skillList[3]);
 let skillTemplate4 = getSkill(skillList[4]);
 let skillTemplate5 = getSkill(skillList[5]);
-//let skillTemplateAll = getSkill(skillList);
+/* let skillTemplateAll = getSkill(skillList);
+
+document.querySelector(".js-skills-tbody").innerHTML = skillTemplateAll;
+document.querySelector(".js-skills-tbody").innerHTML = skillTemplate1;
+
+let skillAreaNode = document.querySelector(".js-skills-tbody");
+skillAreaNode.innerHTML = skillTemplate;
+*/
+
+// document.querySelector(".js-skills-tbody").innerHTML = skillTemplate + skillTemplate1 + skillTemplate2 + skillTemplate3 + skillTemplate4 + skillTemplate5;
 
 
-document.querySelector(".js-skills-tbody").innerHTML = skillTemplate + skillTemplate1 + skillTemplate2 + skillTemplate3 + skillTemplate4 + skillTemplate5;
-//document.querySelector(".js-skills-tbody").innerHTML = skillTemplateAll;
-// document.querySelector(".js-skills-tbody").innerHTML = skillTemplate1;
+let skillTable = "";
 
-// let skillAreaNode = document.querySelector(".js-skills-tbody");
-// skillAreaNode.innerHTML = skillTemplate;
+for (i = 0; i <= skillList.length-1; i += 1) {
+
+    skillTable += getSkill(skillList[i]);
+}
+
+document.querySelector(".js-skills-tbody").innerHTML = skillTable;
 
 
 
-    let employeeList = [ 
+
+
+// ********************* EMPLOYEES RÉSZ KEZDETE **************************
+
+let employeeList = [ 
     {
     employeeName: 'ARANYKUTATÓ',
     goldPerClickIncrement: 1,
@@ -196,15 +211,14 @@ let employeeTemplate3 = getEmployee(employeeList[3]);
 let employeeTemplate4 = getEmployee(employeeList[4]);
 let employeeTemplate5 = getEmployee(employeeList[5]);
 document.querySelector(".js-employees-tbody").innerHTML = employeeTemplate + employeeTemplate1 + employeeTemplate2 + employeeTemplate3 + employeeTemplate4 + employeeTemplate5;
+
+document.querySelector(".js-employees-tbody").innerHTML = getEmployee(employeeList[0]) + getEmployee(employeeList[1]) + getEmployee(employeeList[2]) + getEmployee(employeeList[3]) + getEmployee(employeeList[4]) + getEmployee(employeeList[5]);
+getEmployee(employeeList[0])  + getEmployee(employeeList[1]) + getEmployee(employeeList[2]) + getEmployee(employeeList[3]) + getEmployee(employeeList[4]) + getEmployee(employeeList[5]);
 */
-
-// document.querySelector(".js-employees-tbody").innerHTML = getEmployee(employeeList[0]) + getEmployee(employeeList[1]) + getEmployee(employeeList[2]) + getEmployee(employeeList[3]) + getEmployee(employeeList[4]) + getEmployee(employeeList[5]);
-// getEmployee(employeeList[0])  + getEmployee(employeeList[1]) + getEmployee(employeeList[2]) + getEmployee(employeeList[3]) + getEmployee(employeeList[4]) + getEmployee(employeeList[5]);
-
 
 let employeeTable = "";
 
-for (i = 0; i <= 5; i += 1) {
+for (i = 0; i <= (employeeList.length - 1); i += 1) {
 
     employeeTable += getEmployee(employeeList[i]);
 }
