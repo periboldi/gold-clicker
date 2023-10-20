@@ -2,7 +2,6 @@ let clickingAreaNode = document.querySelector(".js-clicking-area-container");
 let inventoryContainerNode = document.querySelector(".js-inventory-container");
 
 // állapottér
-
 let {
     seconds,
     gold,
@@ -15,9 +14,9 @@ let {
 function getInitialState() {
     return {
         seconds: 0,
-        gold: 1e7,
+        gold: 0,
         goldPerClick: 1,
-        goldPerSec: 1,
+        goldPerSec: 0,
         skillList: [ 
             {
             skillName: 'ARANYKUTATÁS',
@@ -143,18 +142,19 @@ function handleGoldClicked(event) {
 
 function handleInventoryClicked(event) {
     let clickIndex = event.target.dataset.index;
-    console.log(clickIndex);
-    console.log(event.target);
+    // console.log(clickIndex);
+    // console.log(event.target);
     if (typeof clickIndex !== 'undefined') {
     clickIndex = Number(clickIndex); // felesleges, mert automatikusan elvégzi...
     let clickedSkill = skillList[clickIndex];
     if (gold < clickedSkill.price) {
-        alert("Nem tudjuk megvenni!");
+        alert("Nincs elég aranyad, hogy ezt megvedd!");
         return;
     }
     gold -= clickedSkill.price;
     goldPerClick += clickedSkill.goldPerClickIncrement;
     clickedSkill.amount += 1;
+    render()
     }
 }
 
@@ -195,7 +195,7 @@ function getEmployee({ employeeName, goldPerClickIncrement, description, amount,
                     <p>ár: ${formatPrice(price)}</p>
                 </td>
                 <td>
-                    <p><strong>${employeeName} (${ goldPerClickIncrement } arany / klikk)</strong></p>
+                    <p><strong>${employeeName} (${ goldPerClickIncrement } arany / mp)</strong></p>
                     <p>${description}</p>
                 </td>
             </tr>

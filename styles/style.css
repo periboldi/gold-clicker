@@ -37,7 +37,16 @@ body {
 .skills-table img, .business-table img {
     width: 100px;
     border-radius: 50%;
-    
+    user-select: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border: 2px solid goldenrod;
+ }
+
+ .skills-table img:hover, .business-table img:hover { 
+    transform: scale(1.05);
+    opacity: 1;
+    border: 2px solid gold;
 }
 
 .gold-coin { 
