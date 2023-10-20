@@ -1,21 +1,42 @@
+let clickingAreaNode = document.querySelector(".js-clicking-area-container");
+
 // állapottér
 let seconds = 0;
 let gold = 0;
 let goldPerClick = 1;
 let goldPerSec = 0;
 
-function getTemplate() {
+function getClickingAreaTemplate() {
     return `
             <p><strong>${ seconds } másodperc</strong></p>
-            <img src="./images/gold_coin.png" alt="Arany klikkelő" >
+            <img src="./images/gold_coin.png" alt="Aranyklikkelő" data-enable_click="true" class="gold-coin" >
             <p><strong>${ gold } arany</strong></p>
             <p>${ goldPerClick } arany / klikk</p>
             <p>${ goldPerSec } arany / mp</p>
 `;
 }
 
-let clickingAreaNode = document.querySelector(".js-clicking-area-container");
-clickingAreaNode.innerHTML = getTemplate();
+function handleGoldClicked(event) {
+    // console.log(event.target);
+    // console.log(typeof event.target.dataset.enable_click);
+    if (event.target.dataset.enable_click === 'true') {
+    gold = gold + goldPerClick;
+    render();
+    }
+
+    //console.log(event.currentTarget);
+    //alert(event.target.alt);
+        /* gold += goldPerClick;
+        goldPerClick += goldPerClickIncrement;
+        goldPerSec += goldPerSecIncrement;
+        seconds += 1;
+        let template = getTemplate();
+        let clickingAreaNode = document.querySelector(".js-clicking-area-container");
+        clickingAreaNode.innerHTML = template;*/
+}
+
+
+
 
 /* később ebből objektum lesz.
 let skillName = 'ARANYKUTATÁS';
@@ -34,6 +55,8 @@ function formatPrice(price) {
     return `${kValue}K`
 
 }
+
+// ********************* SKILLS RÉSZ KEZDETE **************************
 
 let skillList = [ 
     {
@@ -87,8 +110,6 @@ let skillList = [
 
 ];
 
-
-
 function getSkill({ skillName, goldPerClickIncrement, description, amount, price, link }) {
     return `
         <tr>
@@ -132,7 +153,7 @@ for (i = 0; i <= skillList.length-1; i += 1) {
     skillTable += getSkill(skillList[i]);
 }
 
-document.querySelector(".js-skills-tbody").innerHTML = skillTable;
+
 
 
 
@@ -231,8 +252,26 @@ for (i = 0; i <= (employeeList.length - 1); i += 1) {
     employeeTable += getEmployee(employeeList[i]);
 }
 
-document.querySelector(".js-employees-tbody").innerHTML = employeeTable;
+
 
 // debugger;
+function render() {
+    clickingAreaNode.innerHTML = getClickingAreaTemplate();
+    document.querySelector(".js-skills-tbody").innerHTML = skillTable;
+    document.querySelector(".js-employees-tbody").innerHTML = employeeTable;
+};
+
+function initialize() {
+    seconds = 0;
+    gold = 0;
+    goldPerClick = 1;
+    goldPerSec = 0;
 
 
+    clickingAreaNode.addEventListener('click', handleGoldClicked);
+
+
+    render();
+};
+
+initialize();

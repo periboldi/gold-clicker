@@ -40,6 +40,15 @@ body {
     
 }
 
+.gold-coin { 
+    user-select: none;
+    cursor: pointer;
+}
+
+.gold-coin:hover { 
+    transform: scale(1.1);
+}
+
 
 /* *************************** Main area ***************************** */
 
