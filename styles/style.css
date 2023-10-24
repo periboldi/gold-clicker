@@ -8,10 +8,11 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    user-select: none;
 }
 
 body {
-/*    min-width: 540px ; */
+/*    min-width: 580px ; */
     margin: 18px;
 }
 
@@ -37,7 +38,6 @@ body {
 .skills-table img, .business-table img {
     width: 100px;
     border-radius: 50%;
-    user-select: none;
     cursor: pointer;
     opacity: 0.9;
     border: 2px solid goldenrod;
@@ -50,7 +50,6 @@ body {
 }
 
 .gold-coin { 
-    user-select: none;
     cursor: pointer;
 }
 
@@ -107,8 +106,4 @@ body {
         "perclick"
         "persec";
     }
-}
-
-@media screen and (max-width: 576px) {
-    
 }

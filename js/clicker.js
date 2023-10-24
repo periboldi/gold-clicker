@@ -9,13 +9,16 @@ let {
     goldPerClick,
     goldPerSec,
     skillList,
-    employeeList
+    employeeList,
+    startTimestamp,
 } = getInitialState();
 
 function getInitialState() {
     return {
+        intervalId: setInterval(administrateTime, 200),
+        startTimestamp: new Date().getTime(),
         seconds: 0,
-        gold: 1000000,
+        gold: 1000,
         goldPerClick: 1,
         goldPerSec: 0,
         skillList: [ 
@@ -118,19 +121,19 @@ function getInitialState() {
             price: 250000,
             link: "./images/gold_duck.png",
             },
-        
         ],
     }
 }
 
-function getClickingAreaTemplate() {
-    return `
-            <p><strong>${ seconds } másodperc</strong></p>
-            <img src="./images/gold_coin.png" alt="Aranyklikkelő" data-enable_click="true" class="gold-coin" >
-            <p><strong>${ gold } arany</strong></p>
-            <p>${ goldPerClick } arany / klikk</p>
-            <p>${ goldPerSec } arany / mp</p>
-`;
+function administrateTime() {
+    let currentTimestamp = new Date().getTime();
+    let elapsedTime = Math.floor((currentTimestamp - startTimestamp) / 1000);
+    let rewardSeconds = elapsedTime - seconds;
+    if (rewardSeconds > 0) {
+        gold += goldPerSec * rewardSeconds;
+        seconds = elapsedTime;
+        render();
+    }
 }
 
 /* ********************************** click event listener ******************************** */
@@ -159,7 +162,6 @@ function handleSkillClicked(event) {
 }
 
 function handleEmployeeClicked(event) {
-   
     let clickIndex = event.target.dataset.index;
     clickIndex = Number(clickIndex);
     if (typeof clickIndex !== 'undefined') {
@@ -177,10 +179,21 @@ function handleEmployeeClicked(event) {
 
 function formatPrice(price) {
     /* PRE: 0 <= Price <= 999999 */ 
-    // PRE = előfeltétel
     if (price < 1000) return price;
     let kValue = price / 1000;
     return `${kValue}K`
+}
+
+/* ********************************** templates ******************************** */
+
+function getClickingAreaTemplate() {
+    return `
+            <p><strong>${ seconds } másodperc</strong></p>
+            <img src="./images/gold_coin.png" alt="Aranyklikkelő" data-enable_click="true" class="gold-coin" >
+            <p><strong>${ gold } arany</strong></p>
+            <p>${ goldPerClick } arany / klikk</p>
+            <p>${ goldPerSec } arany / mp</p>
+`;
 }
 
 function getSkill({ skillName, goldPerClickIncrement, description, amount, price, link }, index) {
@@ -240,5 +253,3 @@ function initialize() {
 };
 
 initialize();
-
-// debugger;
